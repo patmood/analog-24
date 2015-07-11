@@ -6,6 +6,14 @@ function r(el, deg) {
   el.setAttribute('transform', 'rotate('+ deg +' 50 50)')
 }
 
+function padZeroes(x, length) {
+  x = x.toString()
+  while (x.length < (length || 2)) {
+    x = '0' + x
+  }
+  return x
+}
+
 function setRotation() {
   var d = new Date()
     , mins = d.getMinutes()
@@ -13,7 +21,7 @@ function setRotation() {
 
   r(hourHand, 15*(hours) + mins/4 + 180)
 
-  document.title = hours + ':' + mins
+  document.title = padZeroes(hours) + ':' + padZeroes(mins)
 }
 
 // Initial set
