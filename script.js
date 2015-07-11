@@ -24,8 +24,18 @@ function setRotation() {
   document.title = padZeroes(hours) + ':' + padZeroes(mins)
 }
 
+function setColors() {
+  chrome.storage.sync.get(function(items) {
+    document.getElementById('body').style.backgroundColor = items.colors.background
+    document.getElementById('face').style.fill = items.colors.face
+    document.getElementById('face').style.stroke = items.colors.faceOutline
+    document.getElementById('hour').style.stroke = items.colors.hour
+  })
+}
+
 // Initial set
 setRotation()
+setColors()
 
 // Show hand once rotated
 hourHand.style.visibility = 'visible'
