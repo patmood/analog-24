@@ -6,8 +6,7 @@
   <style type="text/css">
     #color-inputs {
       display: inline-block;
-      width: 300px;
-      text-align: right;
+      width: 30%;
       vertical-align: top;
       padding: 10px;
     }
@@ -15,7 +14,8 @@
     #cp { display: none;}
 
     #clock-container {
-      height: 200px;
+      height: 300px;
+      width: 60%;
       display: inline-block;
       background-color: #57585C
     }
@@ -23,44 +23,27 @@
     #face { stroke-width: 2px; fill: #222; stroke: #888; }
     #hour { stroke-width: 1px; stroke: #E47258; }
 
-    #status { color: #53d33b;}
+    #status {
+      color: #53d33b;
+      font-size: 18px;
+    }
+
+    .btn {
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      font-size: 18px;
+      border: none;
+      position: relative;
+      padding: 0.3em 1em;
+      margin: 10px 0;
+    }
 
   </style>
 </head>
 <body>
 
 <h1>Customize Clock Colors</h1>
-
-<div id="color-inputs">
-  <div class="input-wrap">
-    <label>
-      Background
-      <input type="text" id="background-color" class="color-input">
-    </label>
-  </div>
-  <div class="input-wrap">
-    <label>
-      Face
-      <input type="text" id="face-color" class="color-input">
-    </label>
-  </div>
-  <div class="input-wrap">
-    <label>
-      Face Outline
-      <input type="text" id="face-outline-color" class="color-input">
-    </label>
-  </div>
-  <div class="input-wrap">
-    <label>
-      Hour hand
-      <input type="text" id="hour-color" class="color-input">
-    </label>
-  </div>
-  <div>
-    <button id="save">Save</button>
-    <div id="status"></div>
-  </div>
-</div>
 
 <div id="clock-container">
   <svg id="clock" viewBox="0 0 100 100" height="100%" width="100%">
@@ -71,12 +54,37 @@
   </svg>
 </div>
 
-
-
-
-
-
-<div class="cp cp-default" id="cp"></div>
+<div id="color-inputs">
+  <div class="input-wrap">
+    <label>
+      <input type="text" id="background-color" class="color-input">
+      Background
+    </label>
+  </div>
+  <div class="input-wrap">
+    <label>
+      <input type="text" id="face-color" class="color-input">
+      Face
+    </label>
+  </div>
+  <div class="input-wrap">
+    <label>
+      <input type="text" id="face-outline-color" class="color-input">
+      Face Outline
+    </label>
+  </div>
+  <div class="input-wrap">
+    <label>
+      <input type="text" id="hour-color" class="color-input">
+      Hour hand
+    </label>
+  </div>
+  <div>
+    <button id="save" class="btn">Save</button>
+    <div id="status"></div>
+    <div class="cp cp-default" id="cp"></div>
+  </div>
+</div>
 
 <script src="colorpicker.min.js"></script>
 <script src="options.js"></script>
