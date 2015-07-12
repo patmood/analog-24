@@ -1,38 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head><title>Analog 24 Options</title></head>
+<head>
+  <title>Analog 24 Options</title>
+  <link rel="stylesheet" type="text/css" href="colorpicker.css">
+  <style type="text/css">
+    #color-inputs {
+      display: inline-block;
+      width: 300px;
+      text-align: right;
+      vertical-align: top;
+      padding: 10px;
+    }
+
+    #cp { display: none;}
+
+    #clock-container {
+      height: 200px;
+      display: inline-block;
+      background-color: #57585C
+    }
+
+    #face { stroke-width: 2px; fill: #222; stroke: #888; }
+    #hour { stroke-width: 1px; stroke: #E47258; }
+
+    #status { color: #53d33b;}
+
+  </style>
+</head>
 <body>
 
-<div>
-  <label>
-    Background
-    <input type="text" id="background-color">
-  </label>
-</div>
-<div>
-  <label>
-    Face
-    <input type="text" id="face-color">
-  </label>
-</div>
-<div>
-  <label>
-    Face Outline
-    <input type="text" id="face-outline-color">
-  </label>
-</div>
-<div>
-  <label>
-    Hour hand
-    <input type="text" id="hour-color">
-  </label>
-</div>
-<div>
-  <button id="save">Save</button>
+<h1>Customize Clock Colors</h1>
+
+<div id="color-inputs">
+  <div class="input-wrap">
+    <label>
+      Background
+      <input type="text" id="background-color" class="color-input">
+    </label>
+  </div>
+  <div class="input-wrap">
+    <label>
+      Face
+      <input type="text" id="face-color" class="color-input">
+    </label>
+  </div>
+  <div class="input-wrap">
+    <label>
+      Face Outline
+      <input type="text" id="face-outline-color" class="color-input">
+    </label>
+  </div>
+  <div class="input-wrap">
+    <label>
+      Hour hand
+      <input type="text" id="hour-color" class="color-input">
+    </label>
+  </div>
+  <div>
+    <button id="save">Save</button>
+    <div id="status"></div>
+  </div>
 </div>
 
-<div id="status"></div>
+<div id="clock-container">
+  <svg id="clock" viewBox="0 0 100 100" height="100%" width="100%">
+    <circle id="face" cx="50" cy="50" r="45"/>
+    <g id="hands">
+      <line id="hour" x1="50" y1="50" x2="50" y2="16" />
+    </g>
+  </svg>
+</div>
 
+
+
+
+
+
+<div class="cp cp-default" id="cp"></div>
+
+<script src="colorpicker.min.js"></script>
 <script src="options.js"></script>
 </body>
 </html>
